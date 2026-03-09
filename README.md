@@ -37,7 +37,18 @@
 7. `9V Battery Holder` 
 - <img src="images/07.jpg" alt="BlueNoiseHeader" width="363">
 
+---
 
 
+
+ ## PINS TO ATTACH NRF24L01 TO ESP32
+
+### FOR DUAL/TWO NRF24L01 
++ ` HSPI= SCK = 14, MISO = 12, MOSI = 13, CS = 15 , CE = 16`
++ ` VSPI= SCK = 18, MISO =19, MOSI = 23 ,CS =21 ,CE = 22`
+
+### FOR SINGLE/ONE NRF24L01 YOU CAN CHOOSE BETWEEN HSPI OR VSPI 
+ - `VSPI= SCK = 18, MISO =19, MOSI = 23 ,CS =21 ,CE = 22`
+- `HSPI= SCK = 14, MISO = 12, MOSI = 13, CS = 15 , CE = 16` 
 
 ---
