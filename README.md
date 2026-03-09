@@ -39,6 +39,8 @@
 
 ---
  ## CUSTOMIZED PCB BOARD IN EAGLE
+ [Download PCB Files](pcb-board/BlueNoise-pcb-board.brd)
+ [Download PCB Files](pcb-board/BlueNoise-pcb-board.sch)
 
 ---
  ## PINS TO ATTACH NRF24L01 TO ESP32
