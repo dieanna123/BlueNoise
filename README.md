@@ -23,19 +23,19 @@
 - <img src="images/02.jpg" alt="BlueNoiseHeader" width="363">
 
 3. `25V 47UF CAPACITORF` 
-- <img src="images/03.jpg" alt="BlueNoiseHeader">
+- <img src="images/03.jpg" alt="BlueNoiseHeader" width="363">
 
 4. `1 DIP SWITCH` 
-- <img src="images/04.jpg" alt="BlueNoiseHeader">
+- <img src="images/04.jpg" alt="BlueNoiseHeader" width="363">
 
 5. `DC Voltage Regulator Step Down Converter 4.5 V-12 V to 3.3 V/5 V 800 mA Power Supply Regulator Adjustment (5 Volt)` 
-- <img src="images/05.jpg" alt="BlueNoiseHeader">
+- <img src="images/05.jpg" alt="BlueNoiseHeader" width="363">
 
 6. `9V Alkaline Batteries` 
-- <img src="images/06.jpg" alt="BlueNoiseHeader">
+- <img src="images/06.jpg" alt="BlueNoiseHeader" width="363">
 
 7. `9V Battery Holder` 
-- <img src="images/07.jpg" alt="BlueNoiseHeader">
+- <img src="images/07.jpg" alt="BlueNoiseHeader" width="363">
 
 
 
