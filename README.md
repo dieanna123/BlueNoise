@@ -6,7 +6,7 @@
 
 ### Part of the exhibtion : https://weltecho.eu/veranstaltung/vernissage-28/
 
-<img src="image/01.jpeg" alt="Wifi and Bluetooth jammer made with an esp32 and nrf24l01+pa+lna modules." width="400" height="600">
+<img src="image/01.jpeg" alt="Blue Noise Mockup Image." width="400" height="600">
 
  ---
 # WHAT DOES IT DO?
