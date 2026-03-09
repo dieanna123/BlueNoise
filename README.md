@@ -52,3 +52,6 @@
 - `HSPI= SCK = 14, MISO = 12, MOSI = 13, CS = 15 , CE = 16` 
 
 ---
+
+### Wiring
+<img src="images/08.jpg" alt="wirung" width="963">
