@@ -54,4 +54,4 @@
 ---
 
 ### Wiring
-<img src="images/08.jpg" alt="wiring" width="963">
+<img src="images/08.png" alt="wiring" width="963">
