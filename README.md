@@ -39,7 +39,10 @@
 
 ---
  ## CUSTOMIZED PCB BOARD IN EAGLE
+ ### Brd File
  [Download PCB Files](pcb-board/BlueNoise-pcb-board.brd)
+
+  ### Sch File
  [Download PCB Files](pcb-board/BlueNoise-pcb-board.sch)
 
 ---
