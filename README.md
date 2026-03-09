@@ -28,7 +28,8 @@
 4. `1 DIP SWITCH` 
 - <img src="images/04.jpg" alt="BlueNoiseHeader" width="363">
 
-5. `DC Voltage Regulator Step Down Converter 4.5 V-12 V to 3.3 V/5 V 800 mA Power Supply Regulator Adjustment (5 Volt)` 
+5. `DC Voltage Regulator Step Down Converter 4.5 V-12 V to 
+3.3 V/5 V 800 mA Power Supply Regulator Adjustment (5 Volt)` 
 - <img src="images/05.jpg" alt="BlueNoiseHeader" width="363">
 
 6. `9V Alkaline Batteries` 
