@@ -55,3 +55,17 @@
 
 ### Wiring
 <img src="images/08.png" alt="wiring" width="963">
+
+---
+
+## UPLOADING CODE TO ESP32
+## COMPILING USING IDE 
+
+* DOWNLOAD LIBRARIES YOU NEED AND INSTALL [RF24 LIBRARY](https://github.com/nRF24/RF24) AND [EZBUTTON LIBRARY](https://arduinogetstarted.com/tutorials/arduino-button-library)
+* DOWLOAD CODE [INO FILE](https://github.com/Delivers/bluenoise/tree/main/smoochie_version)
+
+---
+
+
+# SPECIAL THANKS
+  * [ATOMNFT](https://github.com/dkyazzentwatwa/cypher-jammer?tab=readme-ov-file) - Cypher Jammer
