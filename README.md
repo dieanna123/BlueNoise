@@ -17,25 +17,25 @@
 
 ## REQUIRED DEVICE AND MODULE:
 1. `NRF24L01+ PLUS – PA LNA SMA Antenne`
--  <img src="images/01.png" alt="BlueNoiseHeader">
+-  <img src="images/01.png" alt="BlueNoiseHeader" width="963">
 
 2. `1pc ESP32U` 
-- <img src="images/02.jpg" alt="BlueNoiseHeader">
+- <img src="images/02.jpg" alt="BlueNoiseHeader" width="963">
 
 3. `25V 47UF CAPACITORF` 
-- <img src="image/03.jpg" alt="BlueNoiseHeader">
+- <img src="images/03.jpg" alt="BlueNoiseHeader">
 
 4. `1 DIP SWITCH` 
-- <img src="image/04.jpg" alt="BlueNoiseHeader">
+- <img src="images/04.jpg" alt="BlueNoiseHeader">
 
 5. `DC Voltage Regulator Step Down Converter 4.5 V-12 V to 3.3 V/5 V 800 mA Power Supply Regulator Adjustment (5 Volt)` 
-- <img src="image/05.jpg" alt="BlueNoiseHeader">
+- <img src="images/05.jpg" alt="BlueNoiseHeader">
 
 6. `9V Alkaline Batteries` 
-- <img src="image/06.jpg" alt="BlueNoiseHeader">
+- <img src="images/06.jpg" alt="BlueNoiseHeader">
 
 7. `9V Battery Holder` 
-- <img src="image/07.jpg" alt="BlueNoiseHeader">
+- <img src="images/07.jpg" alt="BlueNoiseHeader">
 
 
 
