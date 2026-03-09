@@ -17,10 +17,10 @@
 
 ## REQUIRED DEVICE AND MODULE:
 1. `NRF24L01+ PLUS – PA LNA SMA Antenne`
--  <img src="images/01.png" alt="BlueNoiseHeader" width="963">
+-  <img src="images/01.png" alt="BlueNoiseHeader" width="363">
 
 2. `1pc ESP32U` 
-- <img src="images/02.jpg" alt="BlueNoiseHeader" width="963">
+- <img src="images/02.jpg" alt="BlueNoiseHeader" width="363">
 
 3. `25V 47UF CAPACITORF` 
 - <img src="images/03.jpg" alt="BlueNoiseHeader">
