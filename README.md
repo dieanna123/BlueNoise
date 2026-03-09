@@ -38,9 +38,8 @@
 - <img src="images/07.jpg" alt="BlueNoiseHeader" width="363">
 
 ---
-
-
-
+ ## CUSTOMIZED PCB BOARD IN EAGLE
+---
  ## PINS TO ATTACH NRF24L01 TO ESP32
 
 ### FOR DUAL/TWO NRF24L01 
