@@ -63,9 +63,15 @@
 ---
 
 ## UPLOADING CODE TO ESP32
-COMPILING USING IDE 
+COMPILING USING ARDUINO / IDE
 
-* DOWNLOAD LIBRARIES YOU NEED AND INSTALL [RF24 LIBRARY](https://github.com/nRF24/RF24) AND [EZBUTTON LIBRARY](https://arduinogetstarted.com/tutorials/arduino-button-library)
+ ### Download and install library "RF24"
+ [Download PCB Files](arduino/RF24-master(1).zip)
+
+  ### Download and install library "Button Master"
+ [Download PCB Files](arduino/button-master(1).zip)
+
+
 * DOWLOAD CODE [INO FILE](https://github.com/Delivers/bluenoise/tree/main/smoochie_version)
 
 ---
