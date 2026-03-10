@@ -63,13 +63,21 @@
 ---
 
 ## UPLOADING CODE TO ESP32
-COMPILING USING ARDUINO / IDE
+**Connect ESP to your laptop
 
- ### Download and install library "RF24"
+ ### "RF24 Master"
+ 1. `Download and install library "RF24 Master" in Arduino/ IDE`
  [Download RF24 Files](arduino/RF24-master(1).zip)
 
-  ### Download and install library "Button Master"
+  ### "Button Master"
+  2. `Download and install library "Button Master" in Arduino/ IDE`
  [Download Button Files](arduino/button-master(1).zip)
+
+  ### "Select Device"
+  3. `Select "ESP32 Dev Module" as a device in Arduino/ IDE`
+
+   ### "Upload Code"
+  3. `Download the code and upload it in Arduino/ IDE`
 
 
 * DOWLOAD CODE [INO FILE](https://github.com/Delivers/bluenoise/tree/main/smoochie_version)
