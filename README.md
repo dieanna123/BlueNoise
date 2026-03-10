@@ -66,10 +66,10 @@
 COMPILING USING ARDUINO / IDE
 
  ### Download and install library "RF24"
- [Download PCB Files](arduino/RF24-master(1).zip)
+ [Download RF24 Files](arduino/RF24-master(1).zip)
 
   ### Download and install library "Button Master"
- [Download PCB Files](arduino/button-master(1).zip)
+ [Download Button Files](arduino/button-master(1).zip)
 
 
 * DOWLOAD CODE [INO FILE](https://github.com/Delivers/bluenoise/tree/main/smoochie_version)
