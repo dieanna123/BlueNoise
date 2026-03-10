@@ -76,10 +76,9 @@
   3. `Select "ESP32 Dev Module" as a device in Arduino/ IDE`
 
 
-  3. `Download the code and upload it in Arduino/ IDE`
+  3. `Download the dual pin code and upload it in Arduino/ IDE`
+ [Download Button Files](arduino/FORDUALPINS.ino)
 
-
-* DOWLOAD CODE [INO FILE](https://github.com/Delivers/bluenoise/tree/main/smoochie_version)
 
 ---
 
