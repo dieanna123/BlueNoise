@@ -64,19 +64,18 @@
 
 ## UPLOADING CODE TO ESP32
 **Connect ESP to your laptop
-
- ### "RF24 Master"
+ 
  1. `Download and install library "RF24 Master" in Arduino/ IDE`
  [Download RF24 Files](arduino/RF24-master(1).zip)
 
-  ### "Button Master"
+
   2. `Download and install library "Button Master" in Arduino/ IDE`
  [Download Button Files](arduino/button-master(1).zip)
 
-  ### "Select Device"
+
   3. `Select "ESP32 Dev Module" as a device in Arduino/ IDE`
 
-   ### "Upload Code"
+
   3. `Download the code and upload it in Arduino/ IDE`
 
 
