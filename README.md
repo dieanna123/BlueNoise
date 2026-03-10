@@ -66,18 +66,18 @@
 **Connect ESP to your laptop
  
  1. `Download and install library "RF24 Master" in Arduino/ IDE`
- [Download RF24 Files](arduino/RF24-master(1).zip)
+ [Download RF24 Master](arduino/RF24-master(1).zip)
 
 
   2. `Download and install library "Button Master" in Arduino/ IDE`
- [Download Button Files](arduino/button-master(1).zip)
+ [Download Button Master](arduino/button-master(1).zip)
 
 
   3. `Select "ESP32 Dev Module" as a device in Arduino/ IDE`
 
 
   3. `Download the dual pin code and upload it in Arduino/ IDE`
- [Download Button Files](arduino/FORDUALPINS.ino)
+ [Download Code](arduino/FORDUALPINS.ino)
 
 
 ---
