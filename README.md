@@ -63,7 +63,7 @@
 ---
 
 ## UPLOADING CODE TO ESP32
-**Connect ESP to your laptop
+Connect ESP to your laptop
  
  1. `Download and install library "RF24 Master" in Arduino/ IDE`
  [Download RF24 Master](arduino/RF24-master(1).zip)
@@ -79,8 +79,7 @@
   3. `Download the dual pin code and upload it in Arduino/ IDE`
  [Download Code](arduino/FORDUALPINS.ino)
 
-### OR USE A WEBFLASHER: NO NEED TO DOWNLOAD INO FILE (USE CHROME OR MICROSOFT BROWSER)
-[WEBFLASHER](https://smoochiee.github.io/Bluetooth-jammer-esp32/flash1) SELECT WHAT TO UPLOAD VSPI,HSPI OR DUAL AND CHOOSE RIGHT COM PORT
+## OR USE A WEBFLASHER: NO NEED TO DOWNLOAD INO FILE (USE CHROME OR MICROSOFT BROWSER) [WEBFLASHER](https://smoochiee.github.io/Bluetooth-jammer-esp32/flash1) SELECT WHAT TO UPLOAD VSPI,HSPI OR DUAL AND CHOOSE RIGHT COM PORT
 ---
 
 
