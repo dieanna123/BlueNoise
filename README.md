@@ -79,7 +79,7 @@
   3. `Download the dual pin code and upload it in Arduino/ IDE`
  [Download Code](arduino/FORDUALPINS.ino)
 
-** OR USE A WEBFLASHEr: NO NEED TO DOWNLOAD INO FILE (USE CHROME OR MICROSOFT BROWSER)
+### OR USE A WEBFLASHER: NO NEED TO DOWNLOAD INO FILE (USE CHROME OR MICROSOFT BROWSER)
 [WEBFLASHER](https://smoochiee.github.io/Bluetooth-jammer-esp32/flash1) SELECT WHAT TO UPLOAD VSPI,HSPI OR DUAL AND CHOOSE RIGHT COM PORT
 ---
 
