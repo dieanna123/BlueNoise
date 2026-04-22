@@ -85,3 +85,32 @@ Connect ESP to your laptop
 
 # SPECIAL THANKS
   * [ATOMNFT](https://github.com/dkyazzentwatwa/cypher-jammer?tab=readme-ov-file) - Cypher Jammer
+
+  ---
+
+
+# TROUBLESHOOTING
+
+ * python -m esptool --port COM3 --baud 115200 erase_flash
+
+   ---
+
+ * Phase 1: The Clean Slate (Complete Erase)
+
+We will use a very slow speed (115200) to ensure stability.
+Open CMD and type (don't hit enter yet):
+python -m esptool --port COM3 --baud 115200 erase_flash
+Hold the BOOT button on the ESP32.
+Tap the EN/RST button once.
+Hit Enter on your keyboard.
+Release BOOT only after you see "Erasing..."
+
+ * Phase 2: The Manual "Hard-Wire" (If Phase 1 fails)
+
+If the buttons aren't triggering the bootloader, we bypass them with a jumper wire.
+Connect a wire from GPIO 0 to GND.
+Unplug and replug the USB.
+Run the command:
+python -m esptool --port COM3 --baud 115200 erase_flash
+
+If it succeeds, remove the wire before trying to upload code again.
