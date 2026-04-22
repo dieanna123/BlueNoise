@@ -91,11 +91,11 @@ Connect ESP to your laptop
 
 # TROUBLESHOOTING
 
- * python -m esptool --port COM3 --baud 115200 erase_flash
+### python -m esptool --port COM3 --baud 115200 erase_flash
 
    ---
 
- * Phase 1: The Clean Slate (Complete Erase)
+###  Phase 1: The Clean Slate (Complete Erase)
 
 We will use a very slow speed (115200) to ensure stability.
 Open CMD and type (don't hit enter yet):
@@ -105,7 +105,7 @@ Tap the EN/RST button once.
 Hit Enter on your keyboard.
 Release BOOT only after you see "Erasing..."
 
- * Phase 2: The Manual "Hard-Wire" (If Phase 1 fails)
+###  Phase 2: The Manual "Hard-Wire" (If Phase 1 fails)
 
 If the buttons aren't triggering the bootloader, we bypass them with a jumper wire.
 Connect a wire from GPIO 0 to GND.
