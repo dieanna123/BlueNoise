@@ -1,6 +1,6 @@
 # Blue Noise
 
-<img src="images/00.png" alt="BlueNoiseHeader" width="1500" height="4002">
+<img src="images/00.png" alt="BlueNoiseHeader" width="2000" height="4002">
 
 ### Open-source Wireless Jamming Pentesting Device using ESP32-WROOM-32U & 2 NRFL01+PA+LNA Modules
 
