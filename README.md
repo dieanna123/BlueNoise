@@ -1,4 +1,3 @@
-# Blue Noise
 
 <img src="images/00.png" alt="BlueNoiseHeader" width="2000" height="4002">
 
