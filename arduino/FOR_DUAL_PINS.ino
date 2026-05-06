@@ -81,7 +81,7 @@ void one() {
 
 void setup() {
 
-  Serial.begin(115200);
+  /*Serial.begin(115200);*/
   esp_bt_controller_deinit();
   esp_wifi_stop();
   esp_wifi_deinit();
