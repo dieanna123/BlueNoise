@@ -77,7 +77,7 @@ Connect ESP to your laptop
   3. `Download the dual pin code and upload it in Arduino/ IDE`
  [Download Code](arduino/FORDUALPINS.ino)
 
-## OR USE A WEBFLASHER: NO NEED TO DOWNLOAD INO FILE (USE CHROME OR MICROSOFT BROWSER) [WEBFLASHER](https://smoochiee.github.io/Bluetooth-jammer-esp32/flash1) SELECT WHAT TO UPLOAD VSPI,HSPI OR DUAL AND CHOOSE RIGHT COM PORT
+## OR USE A WEBFLASHER: NO NEED TO DOWNLOAD INO FILE (USE CHROME OR MICROSOFT BROWSER) [WEBFLASHER](https://simonweckert.com/au5st3llung/COCO/flash/bluenoise/index.html) SELECT WHAT TO UPLOAD VSPI,HSPI OR DUAL AND CHOOSE RIGHT COM PORT
 ---
 
 
