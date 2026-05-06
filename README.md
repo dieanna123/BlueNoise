@@ -71,7 +71,8 @@ Connect ESP to your laptop
  [Download Button Master](arduino/button-master(1).zip)
 
 
-  3. `Select "ESP32 Dev Module" as a device in Arduino/ IDE`
+  3. Install ESP32 Board: Tools -> Board -> BoardManager
+  Search for: ESP -> select: "esp32 by Espressif Sytems" & click "Install"
 
 
   3. `Download the dual pin code and upload it in Arduino/ IDE`
