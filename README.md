@@ -71,7 +71,7 @@ Connect ESP to your laptop
  [Download Button Master](arduino/button-master(1).zip)
 
 
-  3. Install ESP32 Board: Tools -> Board -> BoardManager
+  3. Install ESP32 Board: Tools -> Board -> BoardManager <br>
   Search for: ESP -> select: "esp32 by Espressif Sytems" & click "Install"
 
 
