@@ -16,6 +16,7 @@
         line-height: 1.6;
         background-color: #000000;
         color: #ffffff;
+        overflow-x: hidden; /* Prevents accidental horizontal scrolling */
       }
 
       .hero-image {
@@ -24,83 +25,29 @@
         display: block;
       }
 
-      /* Flex container to put text and GIF side-by-side */
       .main-layout {
         display: flex;
         flex-direction: row;
+        justify-content: space-between; /* Pushes text left and GIF right */
         align-items: flex-start;
-        gap: 40px; /* Space between text and GIF */
-        padding: 40px 24px;
+        padding: 40px 4%; /* Uses percentage for consistent edge spacing */
+        gap: 20px;
       }
 
       .text-section {
-        flex: 1; /* Takes up available space */
-        max-width: 600px;
+        flex: 0 1 500px; /* Text won't grow beyond 500px, but can shrink */
+        text-align: left;
       }
 
       .gif-section {
-        flex: 1; /* Allows the GIF to grow */
+        flex: 1; /* GIF takes up remaining space */
+        display: flex;
+        justify-content: flex-end; /* Aligns GIF to the right of its own container */
       }
 
       .gif-section img {
-        width: 100%; /* Makes the GIF "bigger" by filling its container */
-        max-width: 800px; /* Limits absolute giant size on huge monitors */
-        height: auto;
-        display: block;
-      }
-
-      .project-link {
-        display: block;
-        margin-bottom: 20px;
-        font-weight: bold;
-        text-decoration: none;
-        color: <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Ble jammer installer</title>
-    <meta name="description" content="Easily allow users to install Ble jammer." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
-    
-    <style>
-      body {
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Ubuntu, sans-serif;
-        padding: 0;
-        margin: 0;
-        line-height: 1.6;
-        background-color: #000000;
-        color: #ffffff;
-      }
-
-      .hero-image {
         width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* Flex container to put text and GIF side-by-side */
-      .main-layout {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 40px; /* Space between text and GIF */
-        padding: 40px 24px;
-      }
-
-      .text-section {
-        flex: 1; /* Takes up available space */
-        max-width: 600px;
-      }
-
-      .gif-section {
-        flex: 1; /* Allows the GIF to grow */
-      }
-
-      .gif-section img {
-        width: 100%; /* Makes the GIF "bigger" by filling its container */
-        max-width: 800px; /* Limits absolute giant size on huge monitors */
+        max-width: 700px; /* Adjust this to make the GIF even bigger or smaller */
         height: auto;
         display: block;
       }
@@ -127,12 +74,18 @@
         border-radius: 5px;
       }
 
-      /* Mobile Responsive: Stack them vertically if the screen is small */
-      @media (max-width: 800px) {
+      /* Responsive: Stacks on mobile */
+      @media (max-width: 900px) {
         .main-layout {
           flex-direction: column;
+          padding: 20px;
+        }
+        .text-section {
+          flex: 1;
+          max-width: 100%;
         }
         .gif-section {
+          justify-content: center;
           width: 100%;
         }
       }
@@ -145,7 +98,7 @@
 
     <div class="main-layout">
       
-      <!-- Left Side: Text and Options -->
+      <!-- Left Side -->
       <div class="text-section">
         <a class="project-link" href="https://simonweckert.com/bluenoise.html">
           Project Webpage: https://simonweckert.com/bluenoise.html
@@ -167,81 +120,7 @@
         </p>
       </div>
 
-      <!-- Right Side: Big GIF -->
-      <div class="gif-section">
-        <img src="images/GIF2.gif" alt="Demonstration">
-      </div>
-
-    </div>
-
-    <script>
-      document.querySelectorAll('input[name="type"]').forEach(radio =>
-        radio.addEventListener("change", () => {
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `web/manifest_${radio.value}.json`;
-          button.classList.remove('invisible');
-        }
-      ));
-    </script>
-  </body>
-</html>;
-      }
-
-      .radios {
-        padding: 0;
-        margin-top: 20px;
-      }
-
-      .radios li {
-        list-style: none;
-        line-height: 2.5em;
-        background: #1a1a1a;
-        margin-bottom: 10px;
-        padding-left: 15px;
-        border-radius: 5px;
-      }
-
-      /* Mobile Responsive: Stack them vertically if the screen is small */
-      @media (max-width: 800px) {
-        .main-layout {
-          flex-direction: column;
-        }
-        .gif-section {
-          width: 100%;
-        }
-      }
-    </style>
-    <script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>
-  </head>
-  <body>
-
-    <img src="images/title.png" alt="Header Image" class="hero-image">
-
-    <div class="main-layout">
-      
-      <!-- Left Side: Text and Options -->
-      <div class="text-section">
-        <a class="project-link" href="https://simonweckert.com/bluenoise.html">
-          Project Webpage: https://simonweckert.com/bluenoise.html
-        </a>
-        
-        <p>
-          Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer. It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones and audio devices.
-        </p>  
-
-        <p>Choose your hardware:</p>
-        <ul class="radios">
-          <li>
-            <label><input type="radio" name="type" value="Ble2" /> Dual Nrf24l01 Vspi and Hspi pins</label>
-          </li>
-        </ul>
-
-        <p class="button-row">
-          <esp-web-install-button class="invisible"></esp-web-install-button>
-        </p>
-      </div>
-
-      <!-- Right Side: Big GIF -->
+      <!-- Right Side -->
       <div class="gif-section">
         <img src="images/GIF2.gif" alt="Demonstration">
       </div>
