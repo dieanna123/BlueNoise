@@ -13,37 +13,55 @@
           Roboto, Ubuntu, sans-serif;
         padding: 0;
         margin: 0;
-        line-height: 1.4;
+        line-height: 1.6;
         background-color: #000000;
         color: #ffffff;
       }
 
-      /* Das Title-Bild oben am Screen */
       .hero-image {
         width: 100%;
         height: auto;
-        display: block; /* Verhindert kleine Lücken am unteren Rand */
+        display: block;
       }
 
-      .content {
+      /* Flex container to put text and GIF side-by-side */
+      .main-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px; /* Space between text and GIF */
+        padding: 40px 24px;
+      }
+
+      .text-section {
+        flex: 1; /* Takes up available space */
         max-width: 600px;
-        margin: 0 auto;
-        padding: 20px 12px;
       }
 
-      /* Styling für das GIF im Textbereich */
-      .content img {
-        max-width: 100%;
+      .gif-section {
+        flex: 1; /* Allows the GIF to grow */
+      }
+
+      .gif-section img {
+        width: 100%; /* Makes the GIF "bigger" by filling its container */
+        max-width: 800px; /* Limits absolute giant size on huge monitors */
         height: auto;
-        border-radius: 8px; /* Optional: leicht abgerundete Ecken für das GIF */
-        margin: 20px 0;
+        display: block;
       }
 
-      h2 { margin-top: 2em; }
-      a { color: #03a9f4; }
-      
-      .invisible { visibility: hidden; }
-      
+      .project-link {
+        display: block;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #03a9f4;
+      }
+
+      .radios {
+        padding: 0;
+        margin-top: 20px;
+      }
+
       .radios li {
         list-style: none;
         line-height: 2.5em;
@@ -53,37 +71,51 @@
         border-radius: 5px;
       }
 
-      @media (prefers-color-scheme: dark) {
-        a { color: #ffffff; text-decoration: underline; }
+      /* Mobile Responsive: Stack them vertically if the screen is small */
+      @media (max-width: 800px) {
+        .main-layout {
+          flex-direction: column;
+        }
+        .gif-section {
+          width: 100%;
+        }
       }
     </style>
     <script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>
   </head>
   <body>
 
-    <!-- Title Bild außerhalb von .content für volle Breite -->
     <img src="images/title.png" alt="Header Image" class="hero-image">
 
-    <div class="content">
-      <p>Project Webpage: <a href="https://simonweckert.com/bluenoise.html">https://simonweckert.com/bluenoise.html</a></p>
+    <div class="main-layout">
       
-      <p>
-        Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer. It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones and audio devices.
-      </p>  
+      <!-- Left Side: Text and Options -->
+      <div class="text-section">
+        <a class="project-link" href="https://simonweckert.com/bluenoise.html">
+          Project Webpage: https://simonweckert.com/bluenoise.html
+        </a>
+        
+        <p>
+          Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer. It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones and audio devices.
+        </p>  
 
-      <!-- Dein GIF -->
-      <img src="images/GIF2.gif">
+        <p>Choose your hardware:</p>
+        <ul class="radios">
+          <li>
+            <label><input type="radio" name="type" value="Ble2" /> Dual Nrf24l01 Vspi and Hspi pins</label>
+          </li>
+        </ul>
 
-      <p>Choose your hardware:</p>
-      <ul class="radios">
-        <li>
-          <label><input type="radio" name="type" value="Ble2" /> Dual Nrf24l01 Vspi and Hspi pins</label>
-        </li>
-      </ul>
+        <p class="button-row">
+          <esp-web-install-button class="invisible"></esp-web-install-button>
+        </p>
+      </div>
 
-      <p class="button-row" align="center">
-        <esp-web-install-button class="invisible"></esp-web-install-button>
-      </p>
+      <!-- Right Side: Big GIF -->
+      <div class="gif-section">
+        <img src="images/GIF2.gif" alt="Demonstration">
+      </div>
+
     </div>
 
     <script>
