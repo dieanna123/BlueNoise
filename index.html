@@ -17,7 +17,7 @@
         line-height: 1.6;
         background-color: #000000;
         color: #ffffff;
-        overflow-x: hidden; /* Prevents accidental horizontal scrolling */
+        overflow-x: hidden;
       }
 
       .hero-image {
@@ -29,26 +29,35 @@
       .main-layout {
         display: flex;
         flex-direction: row;
-        justify-content: space-between; /* Pushes text left and GIF right */
+        justify-content: space-between;
         align-items: flex-start;
-        padding: 40px 4%; /* Uses percentage for consistent edge spacing */
-        gap: 20px;
+        padding: 40px 4%;
+        gap: 40px;
       }
 
       .text-section {
-        flex: 0 1 500px; /* Text won't grow beyond 500px, but can shrink */
+        flex: 0 1 600px;
         text-align: left;
       }
 
-      .gif-section {
-        flex: 1; /* GIF takes up remaining space */
-        display: flex;
-        justify-content: flex-end; /* Aligns GIF to the right of its own container */
+      /* Dies macht alle Bilder im Textbereich (wie dein Plugin-Bild) kleiner */
+      .text-section img {
+        width: 250px; /* Hier die gewünschte Breite einstellen */
+        height: auto;
+        margin: 15px 0;
+        display: block;
       }
 
+      .gif-section {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* Das große GIF rechts bleibt groß */
       .gif-section img {
         width: 100%;
-        max-width: 700px; /* Adjust this to make the GIF even bigger or smaller */
+        max-width: 750px;
         height: auto;
         display: block;
       }
@@ -75,7 +84,6 @@
         border-radius: 5px;
       }
 
-      /* Responsive: Stacks on mobile */
       @media (max-width: 900px) {
         .main-layout {
           flex-direction: column;
@@ -85,10 +93,8 @@
           flex: 1;
           max-width: 100%;
         }
-
         .text-section img {
-        max-width: 100px; 
-        height: auto;
+          width: 180px; /* Auf dem Handy etwas kleiner */
         }
         .gif-section {
           justify-content: center;
@@ -104,18 +110,18 @@
 
     <div class="main-layout">
       
-      <!-- Left Side -->
       <div class="text-section">
         <p>
-          Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer.<br> It engages with the increasing tendency in modern<br> society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones<br> and audio devices.
+          Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer.<br> 
+          It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones and audio devices.
         </p>  
 
-         <a class="project-link" href="https://simonweckert.com/bluenoise.html">
+        <a class="project-link" href="https://simonweckert.com/bluenoise.html">
           https://simonweckert.com/bluenoise.html
         </a>
 
-         <p>1. Plug the cable into the ESP device</p>
-         <img src="images/plugin.png">
+        <p>1. Plug the cable into the ESP device</p>
+        <img src="images/plugin.png" alt="Plug in image">
         
         <p>2. Choose your hardware:</p>
         <ul class="radios">
@@ -129,9 +135,20 @@
         </p>
       </div>
 
-      <!-- Right Side -->
       <div class="gif-section">
-        <img src="images/GIF2.gif">
+        <img src="images/GIF2.gif" alt="Demonstration GIF">
       </div>
 
-  
+    </div>
+
+    <script>
+      document.querySelectorAll('input[name="type"]').forEach(radio =>
+        radio.addEventListener("change", () => {
+          const button = document.querySelector('esp-web-install-button');
+          button.manifest = `web/manifest_${radio.value}.json`;
+          button.classList.remove('invisible');
+        }
+      ));
+    </script>
+  </body>
+</html>
