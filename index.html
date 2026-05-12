@@ -8,8 +8,7 @@
       content="Easily allow users to install Ble jammer."
     />
     <meta name="viewport" content="width=device-width" />
-    <meta name="color-scheme" content="dark light" />
-    
+    <meta name="color-scheme" content="dark" />
     
     <style>
       body {
@@ -18,6 +17,9 @@
         padding: 0;
         margin: 0;
         line-height: 1.4;
+        /* Forced Dark Theme */
+        background-color: #000000;
+        color: #ffffff;
       }
       .content {
         max-width: 600px;
@@ -48,7 +50,7 @@
       }
       .footer {
         margin-top: 24px;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #444; /* Darkened border for dark background */
         padding-top: 24px;
         text-align: center;
       }
@@ -61,19 +63,18 @@
       }
       td {
         padding: 8px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #444; /* Darkened border */
       }
       .radios li {
         list-style: none;
         line-height: 2em;
       }
+      
+      /* Ensure links are readable in dark mode */
       @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #000000;
-          color: #ffffff;
-        }
         a {
           color: #ffffff;
+          text-decoration: underline;
         }
       }
     </style>
@@ -81,14 +82,12 @@
   </head>
   <body>
     <div class="content">
-      <img src="images/00.png">
+      <img src="images/00.png" alt="Header Image" style="max-width: 100%;">
       <p>Choose your hardware</p>
       <ul class="radios">
-
         <li>
           <label><input type="radio" name="type" value="Ble2" /> Dual Nrf24l01 Vspi and Hspi pins</label>
         </li>
-     
       </ul>
       <p class="button-row" align="center">
         <esp-web-install-button class="invisible"></esp-web-install-button>
@@ -96,16 +95,14 @@
 
       <p>Project Webpage: <a href="https://simonweckert.com/bluenoise.html">https://simonweckert.com/bluenoise.html</a></p>
       <p>
-      Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer. It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones and audio devices. As headphones shrink and cables disappear, our ability—and willingness—to participate in shared auditory space diminishes.</br></br>
+        Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer. It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones and audio devices. As headphones shrink and cables disappear, our ability—and willingness—to participate in shared auditory space diminishes.<br><br>
 
-This project draws attention to the growing phenomenon of self-imposed acoustic isolation. Where the smartphone screen once marked a clear boundary between individuals and their surroundings, wireless headphones now extend this barrier into the auditory realm. The act of "tuning out" has become less visible and more pervasive.</br>
-</br>
-Blue Noise questions the societal consequences of this shift. By disrupting Bluetooth signals, it briefly breaks the seamless flow of personal audio and creates moments of shared, involuntary silence. These interruptions highlight how private soundscapes increasingly replace public awareness. With the rise of AI-driven voice assistants, this trend is likely to accelerate—pushing us further into personalized echo chambers, both visually and acoustically.</br></br>
-
-
-
-
+        This project draws attention to the growing phenomenon of self-imposed acoustic isolation. Where the smartphone screen once marked a clear boundary between individuals and their surroundings, wireless headphones now extend this barrier into the auditory realm. The act of "tuning out" has become less visible and more pervasive.<br><br>
+        
+        Blue Noise questions the societal consequences of this shift. By disrupting Bluetooth signals, it briefly breaks the seamless flow of personal audio and creates moments of shared, involuntary silence. These interruptions highlight how private soundscapes increasingly replace public awareness. With the rise of AI-driven voice assistants, this trend is likely to accelerate—pushing us further into personalized echo chambers, both visually and acoustically.<br><br>
       </p>  
+    </div>
+
     <script>
       document.querySelectorAll('input[name="type"]').forEach(radio =>
         radio.addEventListener("change", () => {
