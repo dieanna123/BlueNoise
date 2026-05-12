@@ -1,152 +1,292 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
+
     <meta charset="utf-8" />
+
     <title>Ble jammer installer</title>
+
     <meta name="description" content="Easily allow users to install Ble jammer." />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta name="color-scheme" content="dark" />
+
     
+
     <style>
+
       body {
+
         font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+
           Roboto, Ubuntu, sans-serif;
+
         font-size: 20px;
+
         padding: 0;
+
         margin: 0;
+
         line-height: 1.6;
-        background: #000000;
+
+        background-color: #000000;
+
         color: #ffffff;
+
         overflow-x: hidden;
+
       }
+
 
       .hero-image {
+
         width: 100%;
+
         height: auto;
+
         display: block;
+
       }
+
 
       .main-layout {
+
         display: flex;
+
         flex-direction: row;
+
         justify-content: space-between;
+
         align-items: flex-start;
+
         padding: 40px 4%;
+
         gap: 40px;
+
       }
+
 
       .text-section {
+
         flex: 0 1 600px;
+
         text-align: left;
+
       }
+
 
       /* Dies macht alle Bilder im Textbereich (wie dein Plugin-Bild) kleiner */
+
       .text-section img {
+
         width: 250px; /* Hier die gewünschte Breite einstellen */
+
         height: auto;
+
         margin: 15px 0;
+
         display: block;
+
       }
+
 
       .gif-section {
+
         flex: 1;
+
         display: flex;
+
         justify-content: flex-end;
+
       }
+
 
       /* Das große GIF rechts bleibt groß */
+
       .gif-section img {
+
         width: 100%;
+
         max-width: 750px;
+
         height: auto;
+
         display: block;
+
       }
+
 
       .project-link {
+
         display: block;
+
         margin-bottom: 20px;
+
         font-weight: bold;
+
         text-decoration: none;
+
         color: #ffffff;
+
       }
+
 
       .radios {
+
         padding: 0;
+
         margin-top: 20px;
+
       }
+
 
       .radios li {
+
         list-style: none;
+
         line-height: 2.5em;
+
         background: #1a1a1a;
+
         margin-bottom: 10px;
+
         padding-left: 15px;
+
         border-radius: 5px;
+
       }
 
+
       @media (max-width: 900px) {
+
         .main-layout {
+
           flex-direction: column;
+
           padding: 20px;
+
         }
+
         .text-section {
+
           flex: 1;
+
           max-width: 100%;
+
         }
+
         .text-section img {
+
           width: 180px; /* Auf dem Handy etwas kleiner */
+
         }
+
         .gif-section {
+
           justify-content: center;
+
           width: 100%;
+
         }
+
       }
+
     </style>
+
     <script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>
+
   </head>
+
   <body>
+
 
     <img src="images/title.png" alt="Header Image" class="hero-image">
 
+
     <div class="main-layout">
 
-         <p>How to Upload Your Code to the ESP Board</p>
-        <p>1. Connect the ESP device to your PC using a USB cable. Ensure the cable is a data cable and not just a charging cable, as a data connection is required for the computer to recognize the board.</p>
-        <img src="images/plugin.png" alt="Plug in image">
-        
-        <p>2. Select the Dual NRF24L01 VSPI and HSPI pins checkbox and click Connect:</p>
-        <ul class="radios">
-          <li>
-            <label><input type="radio" name="type" value="Ble2" /> Dual Nrf24l01 Vspi and Hspi pins</label>
-          </li>
-        </ul>
+      
 
-        <p class="button-row">
-          <esp-web-install-button class="invisible"></esp-web-install-button>
-        </p>
-      </div>
+      <div class="text-section">
 
-      <a class="project-link" href="https://simonweckert.com/bluenoise.html">
+        <p>
+
+          Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer.<br> 
+
+          It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment through wireless, ever-smaller headphones and audio devices.
+
+        </p>  
+
+
+        <a class="project-link" href="https://simonweckert.com/bluenoise.html">
+
           https://simonweckert.com/bluenoise.html
-          <br>
-          <br>
-          <br>
+
         </a>
 
-      <div class="gif-section">
-        <img src="images/GIF2.gif">
+
+        <p>How to Upload Your Code to the ESP Board</p>
+
+        <p>1. Connect the ESP device to your PC using a USB cable. Ensure the cable is a data cable and not just a charging cable, as a data connection is required for the computer to recognize the board.</p>
+
+        <img src="images/plugin.png" alt="Plug in image">
+
+        
+
+        <p>2. Select the Dual NRF24L01 VSPI and HSPI pins checkbox and click Connect:</p>
+
+        <ul class="radios">
+
+          <li>
+
+            <label><input type="radio" name="type" value="Ble2" /> Dual Nrf24l01 Vspi and Hspi pins</label>
+
+          </li>
+
+        </ul>
+
+
+
+        <p class="button-row">
+
+          <esp-web-install-button class="invisible"></esp-web-install-button>
+
+        </p>
+
       </div>
+
+
+      <div class="gif-section">
+
+        <img src="images/GIF2.gif" alt="Demonstration GIF">
+
+      </div>
+
 
     </div>
 
+
     <script>
+
       document.querySelectorAll('input[name="type"]').forEach(radio =>
+
         radio.addEventListener("change", () => {
+
           const button = document.querySelector('esp-web-install-button');
+
           button.manifest = `web/manifest_${radio.value}.json`;
+
           button.classList.remove('invisible');
+
         }
+
       ));
+
     </script>
+
   </body>
+
 </html>
