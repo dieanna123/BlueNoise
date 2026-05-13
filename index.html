@@ -17,7 +17,7 @@
         line-height: 1.6;
         background-color: #000000;
         color: #ffffff;
-        overflow-x: hidden;
+        overflow-x: hidden; /* Verhindert seitliches Scrollen durch 100vw Bilder */
       }
 
       .hero-image {
@@ -49,24 +49,12 @@
       .bluenoise-pic {
         max-width: 1000px;
         margin: 40px 0;
-        position: relative;
       }
 
       .upload-pic {
         max-width: 1200px;
         margin-top: 200px;
         margin-bottom: 60px;
-      }
-
-      /* Volle Breite für das Instruction-Bild */
-      .full-width-instruction {
-        width: 100vw;
-        position: relative;
-        left: calc(-4% - 40px); /* Zieht das Bild zum Rand unter Berücksichtigung des Paddings */
-        margin-top: 80px;
-        margin-bottom: 80px;
-        display: block;
-        height: auto;
       }
 
       .gif-section {
@@ -78,6 +66,17 @@
       .gif-section img {
         width: 100%;
         max-width: 750px;
+        height: auto;
+      }
+
+      /* Instruction Bild: Volle Breite außerhalb des Flex-Layouts */
+      .instruction-container {
+        width: 100vw;
+        margin-top: 80px;
+      }
+
+      .instruction-container img {
+        width: 100%;
         height: auto;
         display: block;
       }
@@ -92,7 +91,7 @@
 
       .radios {
         padding: 0;
-        margin: 20px 0;
+        margin: 40px 0;
       }
 
       .radios li {
@@ -105,7 +104,7 @@
         border-radius: 5px;
       }
 
-      /* Checkbox Styling */
+      /* Große Checkboxen */
       .radios input[type="radio"] {
         transform: scale(4.0);
         margin-right: 50px;
@@ -122,45 +121,45 @@
         width: 100%;
       }
 
-      /* Pop-up Warnung */
+      /* Browser Warnung Pop-up */
       #browser-warning {
         display: none;
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.85);
+        background: rgba(0, 0, 0, 0.9);
         z-index: 10000;
         justify-content: center;
         align-items: center;
       }
 
       .warning-content {
-        background: #292929;
-        padding: 30px;
-        border-radius: 10px;
+        background: #222;
+        padding: 40px;
+        border-radius: 15px;
         text-align: center;
-        border: 1px solid #ff4444;
-        max-width: 450px;
+        border: 2px solid #ff4444;
+        max-width: 500px;
       }
 
       .warning-content button {
-        margin-top: 20px;
-        padding: 10px 20px;
+        margin-top: 25px;
+        padding: 12px 25px;
         background: #ff4444;
         color: white;
         border: none;
         border-radius: 5px;
+        font-weight: bold;
         cursor: pointer;
       }
 
-      /* Versteckt automatischen Text des Installers */
+      /* ESP Tool Fallback-Text verstecken */
       esp-web-install-button { font-size: 0; }
       esp-web-install-button span, esp-web-install-button div { display: none !important; }
 
       @media (max-width: 1100px) {
         .main-layout { flex-direction: column; }
         .text-section { flex: 1; max-width: 100%; }
-        .gif-section { justify-content: center; width: 100%; margin-top: 40px; }
-        .full-width-instruction { left: -4%; width: 108%; }
+        .gif-section { justify-content: center; width: 100%; }
       }
     </style>
 
@@ -205,22 +204,24 @@
 
         <p class="button-row">
           <esp-web-install-button class="invisible">
-            <span slot="unsupported"></span>
+             <span slot="unsupported"></span>
           </esp-web-install-button>
         </p>
-
-        <!-- Das Instruction Bild über die volle Breite -->
-        <img src="images/instructions.png" alt="Instructions" class="full-width-instruction">
       </div>
 
-      <!-- Das rechte GIF -->
+      <!-- Rechtes GIF bleibt in seiner Spalte -->
       <div class="gif-section">
         <img src="images/GIF2.gif" alt="Demonstration GIF">
       </div>
 
     </div>
 
-    <!-- Das Pop-up für falsche Browser -->
+    <!-- HIER: Instruction Bild außerhalb des Flex-Layouts für volle Breite -->
+    <div class="instruction-container">
+        <img src="images/instruction.png" alt="Instructions">
+    </div>
+
+    <!-- Pop-up Warnung -->
     <div id="browser-warning">
       <div class="warning-content">
         <p>Your browser does not support installing things on ESP devices. <br><br> <strong>Please use Google Chrome or Microsoft Edge.</strong></p>
@@ -235,11 +236,9 @@
           const isSupported = 'serial' in navigator;
 
           if (!isSupported) {
-            // Block clicking and show popup
-            event.preventDefault();
+            event.preventDefault(); // Checkbox wird nicht markiert
             document.getElementById('browser-warning').style.display = 'flex';
           } else {
-            // Valid browser: show install button
             const button = document.querySelector('esp-web-install-button');
             button.manifest = `web/manifest_${radio.value}.json`;
             button.classList.remove('invisible');
