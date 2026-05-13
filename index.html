@@ -5,8 +5,7 @@
     <title>Ble jammer installer</title>
     <meta name="description" content="Easily allow users to install Ble jammer." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Farbschema auf Hell umgestellt -->
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="dark" />
     
     <style>
       body {
@@ -16,9 +15,9 @@
         padding: 0;
         margin: 0;
         line-height: 1.6;
-        /* Hintergrund jetzt WEISS, Text SCHWARZ */
-        background-color: #ffffff;
-        color: #000000;
+        /* Hintergrund wieder SCHWARZ, Text WEISS */
+        background-color: #000000;
+        color: #ffffff;
         overflow-x: hidden;
       }
 
@@ -38,7 +37,7 @@
       }
 
       .text-section {
-        flex: 0 0 650px; /* Etwas breiter für das größere Bild */
+        flex: 0 0 650px;
         text-align: left;
       }
 
@@ -49,18 +48,18 @@
         display: block;
       }
 
-      /* Spezielle Anpassung für das BlueNoise Bild (Größer) */
+      /* BlueNoise Bild (Größer) */
       .bluenoise-pic {
-        max-width: 850px; /* Vergrößert das Bild über die Textbreite hinaus */
+        max-width: 900px; /* Noch ein Stück größer */
         margin: 40px 0;
         position: relative;
-        left: -50px; /* Schiebt es leicht nach links für einen künstlerischen Look, falls gewünscht */
+        left: -20px; /* Ein wenig Überhang nach links für den Fokus */
       }
 
-      /* Mehr Abstand zum Upload Bild */
+      /* Viel Platz zum Upload Bild */
       .upload-pic {
         max-width: 600px;
-        margin-top: 100px; /* Viel Platz nach oben */
+        margin-top: 120px; /* Erhöhter Abstand */
         margin-bottom: 60px;
       }
 
@@ -95,7 +94,7 @@
         margin-bottom: 20px;
         font-weight: bold;
         text-decoration: underline;
-        color: #000000;
+        color: #ffffff;
       }
 
       .radios {
@@ -106,12 +105,11 @@
       .radios li {
         list-style: none;
         line-height: 2.5em;
-        background: #f4f4f4; /* Hellgrau für die Auswahlfelder */
-        color: #000000;
+        background: #1a1a1a; /* Dunkler Hintergrund für die Felder */
+        color: #ffffff;
         margin-bottom: 10px;
         padding-left: 15px;
         border-radius: 5px;
-        border: 1px solid #ddd;
       }
 
       @media (max-width: 1100px) {
@@ -143,10 +141,8 @@
           </a>
         </div>
 
-        <!-- BlueNoise Bild ist jetzt größer durch die Klasse .bluenoise-pic -->
         <img src="images/BlueNoise.png" alt="Blue Noise Concept" class="bluenoise-pic">
         
-        <!-- Mehr Abstand durch Klasse .upload-pic -->
         <img src="images/upload.png" alt="Upload Info" class="upload-pic">
         
         <h3 style="margin-top: 60px;">How to Upload Your Code to the ESP Board</h3>
