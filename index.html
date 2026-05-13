@@ -152,6 +152,22 @@ esp-web-install-button div {
   display: none !important;
 }
 
+      /* Vergrößert den Radio-Button selbst */
+.radios input[type="radio"] {
+  transform: scale(2.0); /* Verdoppelt die Größe (1.5 oder 2.5 nach Belieben) */
+  margin-right: 15px;    /* Schafft Platz zwischen Box und Text */
+  cursor: pointer;
+  vertical-align: middle; /* Richtet den Button mittig zum Text aus */
+}
+
+/* Optional: Macht den Text daneben auch etwas fetter oder größer */
+.radios label {
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
       @media (max-width: 1100px) {
         .main-layout { flex-direction: column; }
         .text-section { flex: 1; max-width: 100%; }
