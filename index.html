@@ -15,7 +15,6 @@
         padding: 0;
         margin: 0;
         line-height: 1.6;
-        /* Hintergrund wieder SCHWARZ, Text WEISS */
         background-color: #000000;
         color: #ffffff;
         overflow-x: hidden;
@@ -41,38 +40,32 @@
         text-align: left;
       }
 
-      /* Allgemeine Bilder im Text */
       .text-section img {
         width: 100%;
         height: auto;
         display: block;
       }
 
-      /* BlueNoise Bild (Größer) */
       .bluenoise-pic {
-        max-width: 1000px; /* Noch ein Stück größer */
+        max-width: 1000px;
         margin: 40px 0;
         position: relative;
-        left: 0px; /* Ein wenig Überhang nach links für den Fokus */
       }
 
-      /* Viel Platz zum Upload Bild */
       .upload-pic {
         max-width: 1200px;
-        margin-top: 200px; /* Erhöhter Abstand */
+        margin-top: 200px;
         margin-bottom: 60px;
       }
 
-      .image-row {
-        display: flex;
-        gap: 15px;
-        width: 150%;
-        margin-top: 60px;
-      }
-
-      .image-row img {
-        flex: 1;
-        width: calc(70% - 8px);
+      /* Volle Breite für das Instruction-Bild */
+      .full-width-instruction {
+        width: 100vw;
+        position: relative;
+        left: calc(-4% - 40px); /* Zieht das Bild zum Rand unter Berücksichtigung des Paddings */
+        margin-top: 80px;
+        margin-bottom: 80px;
+        display: block;
         height: auto;
       }
 
@@ -105,74 +98,69 @@
       .radios li {
         list-style: none;
         line-height: 10em;
-        background: #292929; /* Dunkler Hintergrund für die Felder */
+        background: #292929;
         color: #ffffff;
         margin-bottom: 10px;
         padding-left: 15px;
         border-radius: 5px;
-      
       }
 
-      /* Styling für das Warn-Pop-up */
-#browser-warning {
-  display: none; /* Standardmäßig unsichtbar */
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
-}
+      /* Checkbox Styling */
+      .radios input[type="radio"] {
+        transform: scale(4.0);
+        margin-right: 50px;
+        margin-left: 80px;
+        cursor: pointer;
+        vertical-align: middle;
+      }
 
-.warning-content {
-  background: #292929;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  border: 1px solid #ff4444;
-  max-width: 400px;
-}
+      .radios label {
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
 
-.warning-content button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #ff4444;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-      esp-web-install-button {
-  font-size: 0; /* Macht den Text unsichtbar */
-}
+      /* Pop-up Warnung */
+      #browser-warning {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+      }
 
-/* Falls das Tool ein spezielles Element für den Fehler nutzt */
-esp-web-install-button span, 
-esp-web-install-button div {
-  display: none !important;
-}
+      .warning-content {
+        background: #292929;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid #ff4444;
+        max-width: 450px;
+      }
 
-      /* Vergrößert den Radio-Button selbst */
-.radios input[type="radio"] {
-  transform: scale(4.0); /* Verdoppelt die Größe (1.5 oder 2.5 nach Belieben) */
-  margin-right: 50px;    /* Schafft Platz zwischen Box und Text */
-  margin-left: 80px;
-  cursor: pointer;
-  vertical-align: middle; /* Richtet den Button mittig zum Text aus */
-}
+      .warning-content button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #ff4444;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-/* Optional: Macht den Text daneben auch etwas fetter oder größer */
-.radios label {
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-}
+      /* Versteckt automatischen Text des Installers */
+      esp-web-install-button { font-size: 0; }
+      esp-web-install-button span, esp-web-install-button div { display: none !important; }
 
       @media (max-width: 1100px) {
         .main-layout { flex-direction: column; }
         .text-section { flex: 1; max-width: 100%; }
-        .bluenoise-pic { left: 0; max-width: 100%; }
+        .gif-section { justify-content: center; width: 100%; margin-top: 40px; }
+        .full-width-instruction { left: -4%; width: 108%; }
       }
     </style>
 
@@ -208,49 +196,56 @@ esp-web-install-button div {
         <p>2. Select the hardware checkbox and click Connect:</p>
         <ul class="radios">
           <li>
-            <label><input type="radio" name="type" value="Ble2" /> Dual Nrf24l01 Vspi and Hspi pins</label>
+            <label>
+              <input type="radio" name="type" value="Ble2" /> 
+              Dual Nrf24l01 Vspi and Hspi pins
+            </label>
           </li>
         </ul>
 
         <p class="button-row">
-          <esp-web-install-button class="invisible"></esp-web-install-button>
+          <esp-web-install-button class="invisible">
+            <span slot="unsupported"></span>
+          </esp-web-install-button>
         </p>
 
-     
-         
+        <!-- Das Instruction Bild über die volle Breite -->
+        <img src="images/instruction.png" alt="Instructions" class="full-width-instruction">
+      </div>
 
+      <!-- Das rechte GIF -->
       <div class="gif-section">
         <img src="images/GIF2.gif" alt="Demonstration GIF">
       </div>
 
     </div>
 
+    <!-- Das Pop-up für falsche Browser -->
     <div id="browser-warning">
-  <div class="warning-content">
-    <p>Your browser does not support installing things on ESP devices. <br><br> <strong>Please use Google Chrome or Microsoft Edge.</strong></p>
-    <button onclick="document.getElementById('browser-warning').style.display='none'">Close</button>
-  </div>
-</div>
+      <div class="warning-content">
+        <p>Your browser does not support installing things on ESP devices. <br><br> <strong>Please use Google Chrome or Microsoft Edge.</strong></p>
+        <button onclick="document.getElementById('browser-warning').style.display='none'">Close</button>
+      </div>
+    </div>
 
     <script>
       document.querySelectorAll('input[name="type"]').forEach(radio => {
-  radio.addEventListener("click", (event) => {
-    // Prüfen, ob der Browser Web Serial unterstützt
-    const isSupported = 'serial' in navigator;
+        radio.addEventListener("click", (event) => {
+          // Check for Web Serial support
+          const isSupported = 'serial' in navigator;
 
-    if (!isSupported) {
-      // Klick verhindern, damit die Checkbox nicht ausgewählt wird
-      event.preventDefault();
-      // Pop-up anzeigen
-      document.getElementById('browser-warning').style.display = 'flex';
-    } else {
-      // Wenn unterstützt, normaler Ablauf:
-      const button = document.querySelector('esp-web-install-button');
-      button.manifest = `web/manifest_${radio.value}.json`;
-      button.classList.remove('invisible');
-    }
-  });
-});
+          if (!isSupported) {
+            // Block clicking and show popup
+            event.preventDefault();
+            document.getElementById('browser-warning').style.display = 'flex';
+          } else {
+            // Valid browser: show install button
+            const button = document.querySelector('esp-web-install-button');
+            button.manifest = `web/manifest_${radio.value}.json`;
+            button.classList.remove('invisible');
+          }
+        });
+      });
     </script>
 
   </body>
