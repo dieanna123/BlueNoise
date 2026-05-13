@@ -5,7 +5,8 @@
     <title>Ble jammer installer</title>
     <meta name="description" content="Easily allow users to install Ble jammer." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
+    <!-- Farbschema auf Hell umgestellt -->
+    <meta name="color-scheme" content="light" />
     
     <style>
       body {
@@ -15,8 +16,9 @@
         padding: 0;
         margin: 0;
         line-height: 1.6;
-        background-color: #000000;
-        color: #ffffff;
+        /* Hintergrund jetzt WEISS, Text SCHWARZ */
+        background-color: #ffffff;
+        color: #000000;
         overflow-x: hidden;
       }
 
@@ -32,24 +34,36 @@
         justify-content: space-between;
         align-items: flex-start;
         padding: 40px 4%;
-        gap: 60px; /* Erhöhter Abstand zwischen Text und GIF */
+        gap: 60px;
       }
 
       .text-section {
-        flex: 0 0 600px; /* Fixiert die Textbox-Breite auf 600px */
+        flex: 0 0 650px; /* Etwas breiter für das größere Bild */
         text-align: left;
       }
 
-      /* Bilder innerhalb der Text-Sektion */
+      /* Allgemeine Bilder im Text */
       .text-section img {
-        width: 100%;       /* Nutzt die 600px der Text-Sektion voll aus */
-        max-width: 600px; 
+        width: 100%;
         height: auto;
-        margin: 20px 0;
         display: block;
       }
 
-      /* Die Reihe mit den zwei Bildern nebeneinander */
+      /* Spezielle Anpassung für das BlueNoise Bild (Größer) */
+      .bluenoise-pic {
+        max-width: 850px; /* Vergrößert das Bild über die Textbreite hinaus */
+        margin: 40px 0;
+        position: relative;
+        left: -50px; /* Schiebt es leicht nach links für einen künstlerischen Look, falls gewünscht */
+      }
+
+      /* Mehr Abstand zum Upload Bild */
+      .upload-pic {
+        max-width: 600px;
+        margin-top: 100px; /* Viel Platz nach oben */
+        margin-bottom: 60px;
+      }
+
       .image-row {
         display: flex;
         gap: 15px;
@@ -59,20 +73,19 @@
 
       .image-row img {
         flex: 1;
-        width: calc(50% - 8px); /* Bilder teilen sich exakt die Breite */
+        width: calc(50% - 8px);
         height: auto;
-        margin: 0;
       }
 
       .gif-section {
-        flex: 1; /* Nimmt den restlichen Platz ein */
+        flex: 1;
         display: flex;
         justify-content: flex-end;
       }
 
       .gif-section img {
         width: 100%;
-        max-width: 800px; /* Macht das Haupt-GIF wieder groß */
+        max-width: 750px;
         height: auto;
         display: block;
       }
@@ -81,8 +94,8 @@
         display: block;
         margin-bottom: 20px;
         font-weight: bold;
-        text-decoration: none;
-        color: #03a9f4; /* Akzentfarbe für den Link */
+        text-decoration: underline;
+        color: #000000;
       }
 
       .radios {
@@ -93,32 +106,18 @@
       .radios li {
         list-style: none;
         line-height: 2.5em;
-        background: #1a1a1a;
+        background: #f4f4f4; /* Hellgrau für die Auswahlfelder */
+        color: #000000;
         margin-bottom: 10px;
         padding-left: 15px;
         border-radius: 5px;
+        border: 1px solid #ddd;
       }
 
-      /* Responsive für Handys */
       @media (max-width: 1100px) {
-        .main-layout {
-          flex-direction: column;
-          padding: 20px;
-        }
-        .text-section {
-          flex: 1;
-          max-width: 100%;
-        }
-        .gif-section {
-          justify-content: center;
-          width: 100%;
-        }
-        .image-row {
-          flex-direction: column; /* Bilder untereinander auf dem Handy */
-        }
-        .image-row img {
-          width: 100%;
-        }
+        .main-layout { flex-direction: column; }
+        .text-section { flex: 1; max-width: 100%; }
+        .bluenoise-pic { left: 0; max-width: 100%; }
       }
     </style>
 
@@ -131,9 +130,8 @@
 
     <div class="main-layout">
       
-      <!-- Linke Seite: Text und Anleitung -->
       <div class="text-section">
-        <div style="margin-top: 100px;"> <!-- Ersetzt die vielen <br> für sauberen Abstand -->
+        <div style="margin-top: 80px;">
           <p>
             Blue Noise is a critical intervention and artistic exploration that takes the form of a Bluetooth jammer. 
             It engages with the increasing tendency in modern society to isolate ourselves from the acoustic environment 
@@ -145,13 +143,16 @@
           </a>
         </div>
 
-        <img src="images/BlueNoise.png" alt="Blue Noise Concept">
-        <img src="images/upload.png" alt="Upload Info">
+        <!-- BlueNoise Bild ist jetzt größer durch die Klasse .bluenoise-pic -->
+        <img src="images/BlueNoise.png" alt="Blue Noise Concept" class="bluenoise-pic">
         
-        <h3>How to Upload Your Code to the ESP Board</h3>
+        <!-- Mehr Abstand durch Klasse .upload-pic -->
+        <img src="images/upload.png" alt="Upload Info" class="upload-pic">
+        
+        <h3 style="margin-top: 60px;">How to Upload Your Code to the ESP Board</h3>
         
         <p>1. Connect the ESP device to your PC using a USB cable. Ensure the cable is a data cable and not just a charging cable.</p>
-        <img src="images/plugin.png" alt="Plug in image">
+        <img src="images/plugin.png" alt="Plug in image" style="max-width: 400px; margin-bottom: 40px;">
 
         <p>2. Select the hardware checkbox and click Connect:</p>
         <ul class="radios">
@@ -160,19 +161,16 @@
           </li>
         </ul>
 
-        <!-- Install Button -->
         <p class="button-row">
           <esp-web-install-button class="invisible"></esp-web-install-button>
         </p>
 
-        <!-- Zwei Bilder nebeneinander -->
         <div class="image-row">
           <img src="images/Connect2.png" alt="Connect Step">
           <img src="images/gifupload.gif" alt="Upload Animation">
         </div>
       </div>
 
-      <!-- Rechte Seite: Großes GIF -->
       <div class="gif-section">
         <img src="images/GIF2.gif" alt="Demonstration GIF">
       </div>
